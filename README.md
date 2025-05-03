@@ -26,6 +26,9 @@ intron of genes which code proteinのintron長平均値（青）は 2886.95
 intron of genes which code proteinのintron長中央値（赤）は 1395.50  
 <img src="/images/histgram of intron of genes which code protein.png" width="500">
 
+intronlengthを0から2000の間に絞った図  
+<img src="/images/histgram_sperange of intron of genes which code protein range=0-2000.png" width="500">
+
 ### lincRNA genes, NR_(lincRNA)
 intron of genes which code lincRNAのintron長平均値（青）は 3868.43  
 intron of genes which code lincRNAのintron長中央値（赤）は 1651.50  
