@@ -76,7 +76,7 @@ intron_nr_df = intron_transform(nr_genome_data)
 # histplot
 # x = intron_length, y = counts
 
-def original_hist(intron_df):
+def original_hist(intron_df, name = 'intron i wanna see'):
     # 平均・中央値を計算
     mean = intron_df["length"].mean()
     median = intron_df["length"].median()
