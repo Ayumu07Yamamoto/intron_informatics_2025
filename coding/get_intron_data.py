@@ -77,28 +77,49 @@ intron_nr_df = intron_transform(nr_genome_data)
 # x = intron_length, y = counts
 
 def original_hist(intron_df):
+    # 平均・中央値を計算
+    mean = intron_df["length"].mean()
+    median = intron_df["length"].median()
+    print(f"{name}のintron長平均値は {mean:.2f}")
+    print(f"{name}のintron長中央値は {median:.2f}")
+    
     # ヒストグラム描画
     plt.figure(figsize=(8, 5))
     plt.hist(intron_df["length"], bins=50, edgecolor='black') # binの数は増やした方がいいかも
+    
+    # 平均線（青）と中央値線（赤）を追加
+    plt.axvline(mean, color='blue', linestyle='dashed', linewidth=1.0, label=f"Mean: {mean:.0f}")
+    plt.axvline(median, color='red', linestyle='dashed', linewidth=1.0, label=f"Median: {median:.0f}")
+    
     plt.xlabel("Intron length (bp)")
     plt.ylabel("Count")
-    plt.title("Intron Length Distribution")
+    plt.title(f"{name}:Intron Length Distribution")
     plt.grid(True)
+    # plt.savefig(f"histgram of {name}")
     plt.show()
-
-# このままだと外れ値のせいでヒストグラムが上手く描けなかった。sad...
-def cutoff_hist(intron_df):
+    
+def cutoff_hist(intron_df, name = 'intron i wanna see'):
     # 外れ値を考慮した（上位5%を除外）
     cutoff = intron_df["length"].quantile(0.95)
     
     # 範囲でフィルタリング
     filtered = intron_df[intron_df["length"] <= cutoff]
+    # 平均・中央値を計算
+    mean = filtered["length"].mean()
+    median = filtered["length"].median()
+    print(f"{name}のintron長平均値は {mean:.2f}")
+    print(f"{name}のintron長中央値は {median:.2f}")
     
     # ヒストグラム描画
     plt.figure(figsize=(8, 5))
     plt.hist(filtered["length"], bins=50, edgecolor='black')
+    # 平均線（青）と中央値線（赤）を追加
+    plt.axvline(mean, color='blue', linestyle='dashed', linewidth=1.0, label=f"Mean: {mean:.0f}")
+    plt.axvline(median, color='red', linestyle='dashed', linewidth=1.0, label=f"Median: {median:.0f}")
+    
     plt.xlabel("Intron length (bp)")
     plt.ylabel("Count")
-    plt.title(f"Intron Length Distribution (≤ {int(cutoff)} bp)")
+    plt.title(f"{name}:Intron Length Distribution (≤ {int(cutoff)} bp)")
     plt.grid(True)
+    # plt.savefig(f"histgram of {name}")
     plt.show()
