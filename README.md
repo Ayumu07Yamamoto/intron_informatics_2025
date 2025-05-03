@@ -17,16 +17,16 @@ The raw data was downloaded from the [UCSC Genome Browser](https://genome.ucsc.e
 外れ値上位5%を削除しています
 
 ### all genes (NM_(protein) and NR_(lincRNA)
-all intronのintron長平均値は 3072.61  
-all intronのintron長中央値は 1430.00  
+all intronのintron長平均値（青）は 3072.61  
+all intronのintron長中央値（赤）は 1430.00  
 <img src="/images/histgram of all intron.png" width="500">
 
 ### protein coding genes, NM_(protein)
-intron of genes which code proteinのintron長平均値は 2886.95  
-intron of genes which code proteinのintron長中央値は 1395.50  
+intron of genes which code proteinのintron長平均値（青）は 2886.95  
+intron of genes which code proteinのintron長中央値（赤）は 1395.50  
 <img src="/images/histgram of intron of genes which code protein.png" width="500">
 
 ### lincRNA genes, NR_(lincRNA)
-intron of genes which code lincRNAのintron長平均値は 3868.43  
-intron of genes which code lincRNAのintron長中央値は 1651.50  
+intron of genes which code lincRNAのintron長平均値（青）は 3868.43  
+intron of genes which code lincRNAのintron長中央値（赤）は 1651.50  
 <img src="/images/histgram of intron of genes which code lincRNA.png" width="500">
